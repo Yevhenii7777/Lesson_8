@@ -66,6 +66,8 @@ h6 {
 	height: 16px;
 	display: inline-block;
 	margin-right: 20px;
+	margin-bottom: -2px;
+	/* Знайшов у колег!!!!!!!!!!!!!!! аааа більше 4 годин поневірянь */
 	}
 
 .page__statistic li {
@@ -92,12 +94,13 @@ h6 {
 	min-height: 60px;
 	max-width: 1500px;
 	margin: 0 auto;
-	text-align: center;
 	background-color: rgba(245, 241, 241, 0.836);
 	box-shadow: 10px 5px 5px 3px rgba(51, 13, 219, 0.363);
 }
 .border a {
 	display: block;
+	max-width: fit-content;
+	margin: 0 auto;
 	padding: 2px;
 	text-decoration: underline;
 	color: blue;
@@ -113,8 +116,9 @@ h6 {
 .border a:active {
 	outline: 10px solid blue;
 	color: red;
+
 }			
-/* тут трішки експерименту як будуть співпрацювати 2 псевдокласи разом в одному зверненні - вийшло! */
+/* тут трішки експерименту як будуть співпрацювати псевдокласи разом з псевдокласами положення в одному зверненні - вийшло! */
 .border a:focus:last-child {
 	outline: 3px solid red;
 }
@@ -132,14 +136,14 @@ h6 {
 	margin-right: 7px;
 
 }
-/* не рпацює для не unordered списку */
+/* непрацює для не unordered списку */
 .training ul.training li::before{
 	content: "(" counter(item)")";
 }
 
 .field {
 	min-height: 1000px;
-	max-width: 1500px;
+	max-width: 900px;
 	margin: 0 auto 60px;
 	background-color: green;
 	box-shadow: 10px 5px 5px 3px rgba(51, 13, 219, 0.363);
@@ -151,35 +155,96 @@ h6 {
 .game4,
 .game5,
 .game6,
-.game7{
+.game7,
+.game8{
 	background-color:#fff;
-	display: inline-block;
 }
 .game {
-	background-color:#fff;
-	max-width:43px;
-	max-height: 20px;
+	width: 50px;
+	height: 50px;
 	}
 .game1 {
-	background-color:#fff;
-	width: 1450px;
-	height: 20px;
+	width: 800px;
+	height: 30px;
+	margin: -40px 0px 0px 50px;
+	visibility: hidden;
+}
+
+.game2 {
+	width: 25px;
+	height: 70px;
+	margin: -30px 0px 0px 850px;
+	visibility: hidden;
 }
 .game3 {
-	background-color:#fff;
+	width: 600px;
+	height: 20px;
+	margin: 0px 0px 0px 275px;
+	visibility: hidden;
 }
-.game4 {
-	background-color:#fff;
+.game4{
+	width: 15px;
+	height: 570px;
+	margin: -20px 0px 0px 270px;
+	visibility: hidden;
 }
 .game5{
-	background-color:#fff;
+	width: 400px;
+	height: 10px;
+	margin: 0px 0px 0px 270px;
+	visibility: hidden;
 }
 .game6{
-	background-color:#fff;
+	width: 5px;
+	height: 70px;
+	margin: -10px 0px 0px 670px;
+	visibility: hidden;
 }
 .game7{
-	background-color:#fff;
+	width: 180px;
+	height: 180px;
+	margin: 0px 0px 0px 595px;
+	padding-top: 10px;
+	text-align: center;
+	visibility: hidden;
 }
+
+.game:hover + div{
+	visibility: visible;
+}
+.game1:hover,
+.game1:hover + div{
+	visibility: visible;
+}
+.game2:hover,
+.game2:hover + div{
+	visibility: visible;
+}
+.game3:hover,
+.game3:hover + div{
+	visibility: visible;
+}
+.game4:hover,
+.game4:hover + div{
+	visibility: visible;
+}
+.game5:hover,
+.game5:hover + div{
+	visibility: visible;
+}
+.game6:hover,
+.game6:hover + div{
+	visibility: visible;
+}
+.game7:hover,
+.game7:hover + div{
+	visibility: visible;
+}
+.game7:active {
+	background: url(../img/rockstar.jpg) no-repeat center / contain, linear-gradient(to bottom, #716cf9 0%,#f6f92a 59%,#f6f92a 59%,#f6f92a 81%,#f6f92a 81%,#f7f716 100%,#f6f92a 100%);
+}
+/* хотів вліпити background в кінці гри на все поле, але так не працює - тільки для дочірніх елементів або на одному рівні. Чого так не розібрався.*/
+
 
 
 /* Для усіх P окрім останього */
